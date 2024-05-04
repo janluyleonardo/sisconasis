@@ -14,7 +14,12 @@ class TeamFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'Team_name' => $this->faker->name(),
+            'Team_manager' => $this->faker->name(),
+            'Team_phone' => $this->faker->phoneNumber(),
+            'Team_email' => $this->faker->safeEmail(),
+            'Team_neighborhood' => $this->faker->streetName(),
+            'Team_shield' => $this->faker->name(),
         ];
     }
 }

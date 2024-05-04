@@ -209,15 +209,5 @@
   "Full name": "Nombre completo",
   "Cell phone": "Celular",
   "Save changes": "Guadar Cambios",
-  "Delete record": "Eliminar registro",
-  "Reports closeds": "Reportes y cierres",
-  "Parrafo": "En esta plataforma podrás administrar, cargar, editar y ver los registros de los estudiantes que realizaron cursos en el área Desarrollo Profesional y Egresados de la CUN, de manera facil y muy intuitiva.",
-  "Enlace Credenciales": "Para ir a cargar registro da clic",
-  "bienvenido": "¡Hola! Bienvenido.",
-  "Loads list": "Lista de cargas realizadas",
-  "Downloads list": "Lista de descargas realizadas",
-  "Load records": "Cargar registros",
-  "Load certificate records": "Cargar registros de certificados",
-  "No data to show": "No hay datos para mostrar",
-  "downloaded certificates": "Certificados descargados"
+  "Delete record": "Eliminar registro"
 }

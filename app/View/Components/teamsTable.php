@@ -30,6 +30,6 @@ class teamsTable extends Component
      */
     public function render()
     {
-        return view('components.teams-table');
+        return view('components.teams-components.teams-table');
     }
 }

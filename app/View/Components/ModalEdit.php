@@ -24,6 +24,6 @@ class ModalEdit extends Component
      */
     public function render()
     {
-        return view('components.modal-edit');
+        return view('components.teams-components.modal-edit');
     }
 }

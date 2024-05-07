@@ -24,6 +24,6 @@ class ModalShow extends Component
      */
     public function render()
     {
-        return view('components.modal-show');
+        return view('components.teams-components.modal-show');
     }
 }

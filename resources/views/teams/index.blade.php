@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="container px-5 py-5">
+    <div class="container mt-5">
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12">
                 <div class="card shadow-xl">

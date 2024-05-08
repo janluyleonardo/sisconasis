@@ -3,8 +3,7 @@
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
-                <form action="{{ route('teams.update', $team->id) }}" method="post" class="requires-validation"
-                    novalidate>
+                <form action="{{ route('teams.update', $team->id) }}" method="post" class="requires-validation" novalidate>
                     @method('put')
                     @csrf
                     <div class="modal-header text-center">
@@ -21,14 +20,13 @@
                                 <strong>Nombre del delegado:</strong>
                             </div>
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="Team_name" id="Team_name" value="{{ old('Team_name', $team->Team_manager) }}">
+                                <input type="text" class="form-control" name="Team_name" id="Team_name" value="{{ old('Team_name', $team->Team_name) }}">
                             </div>
                             <div class="col-md-12">
                                 <strong>Correo del delegado:</strong>
                             </div>
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="Email" id="Email"
-                                    value="{{ old('Email', $team->Team_email) }}">
+                                <input type="text" class="form-control" name="Team_manager" id="Team_manager" value="{{ old('Team_manager', $team->Team_manager) }}">
                             </div>
                             <div class="col-md-7">
                                 <strong>Localidad del equipo:</strong>
@@ -67,39 +65,18 @@
                                 </select>
                             </div> --}}
                             <div class="col-md-7">
-                                <input type="text" class="form-control" name="Numero_documento" id="Numero_documento"
-                                    value="{{ old('Numero_documento', $team->Team_neighborhood) }}">
+                                <input type="text" class="form-control" name="Team_neighborhood" id="Team_neighborhood"
+                                    value="{{ old('Team_neighborhood', $team->Team_neighborhood) }}">
                             </div>
                             <div class="col-md-5">
-                                <input type="text" class="form-control" name="Numero_documento" id="Numero_documento"
-                                    value="{{ old('Numero_documento', $team->Team_phone) }}">
-                            </div>
-                            {{-- <div class="col-md-12">
-                                <strong>Realizó {{ $team->Tipo_producto }}</strong>
-                            </div>
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" name="Nombre_producto" id="Nombre_producto"
-                                    value="{{ old('Nombre_producto', $team->Nombre_producto) }}">
-                            </div> --}}
-                            <div class="col-md-6">
-                                <strong>fecha  registro:</strong>
-                            </div>
-                            <div class="col-md-6">
-                                <strong>fecha modificación:</strong>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="date"class="form-control" name="Fecha_inicial" id="Fecha_inicial" value="{{ old('Fecha_inicial', $team->created_at->format('Y-m-d')) }}">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="date" class="form-control" name="Fecha_final" id="Fecha_final" value="{{ old('Fecha_final', $team->updated_at->format('Y-m-d')) }}">
+                                <input type="text" class="form-control" name="Team_phone" id="Team_phone"
+                                    value="{{ old('Team_phone', $team->Team_phone) }}">
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="sombra btn btn-secondary"
-                            data-bs-dismiss="modal">{{ __('Cancel') }}</button>
-                        <button type="submit" class="sombra btn btn-success"
-                            onclick="mostrar()">{{ __('Save changes') }}</button>
+                        <button type="button" class="sombra btn btn-secondary" data-bs-dismiss="modal">{{ __('Cancel') }}</button>
+                        <button type="submit" class="sombra btn btn-success" onclick="mostrar()">{{ __('Save changes') }}</button>
                     </div>
                 </form>
             </div>

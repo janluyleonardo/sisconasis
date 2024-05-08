@@ -13,7 +13,7 @@ class UpdateTeamRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class UpdateTeamRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'Team_manager'=>'required|string|max:255',
+            'Team_name'=>'required|string|max:255',
+            'Team_email'=>'required|email',
+            'Team_phone'=>'required|string|max:255',
+            'Team_neighborhood'=>'required|string|max:255',
+            'Team_shield'=>'required|image|mimes:png|max:2048',
         ];
     }
 }

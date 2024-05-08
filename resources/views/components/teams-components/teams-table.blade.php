@@ -1,5 +1,8 @@
 <div>
-    <table class="table table-striped table-hover mx-auto">
+    <table class="table table-striped table-hover table-sm mx-auto">
+        <caption>
+            Listado de equipos agregados recientemente
+        </caption>
         <thead>
             <tr>
                 <th scope="col">#</th>

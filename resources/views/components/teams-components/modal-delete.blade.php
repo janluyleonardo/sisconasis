@@ -5,15 +5,15 @@
             <div class="modal-content sombra bg-white">
                 <div class="modal-header bn-100">
                     <h1 class="modal-title fs-5 mx-auto" id="exampleModalLabel">
-                        {{ Str::upper($team->Nombre_completo_participante) }}
+                        {{ Str::upper($team->Team_name) }}
                     </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                         <i class="bi bi-x-circle-fill"style="width:150%;"></i>
-                    </button>
+                    </button> --}}
                 </div>
                 <div class="modal-body text-center">
-                    Esta segura de eliminar el registro de:<br>
-                    <strong>{{ Str::upper($team->Nombre_completo_participante) }}</strong>
+                    Esta seguro(a) de eliminar el registro de:<br>
+                    <strong>{{ Str::upper($team->Team_name) }}</strong>
                 </div>
                 <div class="modal-footer bn-100">
                     <button type="button" class=" sombra btn btn-warning" data-bs-dismiss="modal">Close</button>

@@ -9,36 +9,34 @@
                     @csrf
                     <div class="modal-header text-center">
                         <h1 class="modal-title fs-5" id="exampleModalLabel">
-                            <strong>{{ Str::title($team->Nombre_completo_participante) }}</strong>
+                            <strong>{{ Str::title($team->Team_name) }}</strong>
                         </h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        {{-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                             <i class="bi bi-x-circle-fill"style="width:150%;"></i>
-                        </button>
+                        </button> --}}
                     </div>
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <strong>Nombre del participante:</strong>
+                                <strong>Nombre del delegado:</strong>
                             </div>
                             <div class="col-md-12">
-                                <input type="text" class="form-control" name="Nombre_completo_participante"
-                                    id="Nombre_completo_participante"
-                                    value="{{ old('Nombre_completo_participante', $team->Nombre_completo_participante) }}">
+                                <input type="text" class="form-control" name="Team_name" id="Team_name" value="{{ old('Team_name', $team->Team_manager) }}">
                             </div>
                             <div class="col-md-12">
-                                <strong>Correo del participante:</strong>
+                                <strong>Correo del delegado:</strong>
                             </div>
                             <div class="col-md-12">
                                 <input type="text" class="form-control" name="Email" id="Email"
-                                    value="{{ old('Email', $team->Email) }}">
+                                    value="{{ old('Email', $team->Team_email) }}">
                             </div>
                             <div class="col-md-7">
-                                <strong>Tipo de documento:</strong>
+                                <strong>Localidad del equipo:</strong>
                             </div>
                             <div class="col-md-5">
-                                <strong>N° documento:</strong>
+                                <strong>N° contacto:</strong>
                             </div>
-                            <div class="col-md-7">
+                            {{-- <div class="col-md-7">
                                 @php
                                     $ccSelect =
                                         str::lower($team->Tipo_documento) == 'cédula de ciudadanía' ? 'selected' : '';
@@ -67,46 +65,33 @@
                                     <option value="pasaporte" {{ $paSelect }}>Pasaporte</option>
                                     <option value="registro civil" {{ $rcSelect }}>Registro civil</option>
                                 </select>
+                            </div> --}}
+                            <div class="col-md-7">
+                                <input type="text" class="form-control" name="Numero_documento" id="Numero_documento"
+                                    value="{{ old('Numero_documento', $team->Team_neighborhood) }}">
                             </div>
                             <div class="col-md-5">
                                 <input type="text" class="form-control" name="Numero_documento" id="Numero_documento"
-                                    value="{{ old('Numero_documento', $team->Numero_documento) }}">
+                                    value="{{ old('Numero_documento', $team->Team_phone) }}">
                             </div>
-                            <div class="col-md-12">
+                            {{-- <div class="col-md-12">
                                 <strong>Realizó {{ $team->Tipo_producto }}</strong>
                             </div>
                             <div class="col-md-12">
                                 <input type="text" class="form-control" name="Nombre_producto" id="Nombre_producto"
                                     value="{{ old('Nombre_producto', $team->Nombre_producto) }}">
+                            </div> --}}
+                            <div class="col-md-6">
+                                <strong>fecha  registro:</strong>
                             </div>
                             <div class="col-md-6">
-                                <strong>fecha inical:</strong>
+                                <strong>fecha modificación:</strong>
                             </div>
                             <div class="col-md-6">
-                                <strong>fecha final:</strong>
+                                <input type="date"class="form-control" name="Fecha_inicial" id="Fecha_inicial" value="{{ old('Fecha_inicial', $team->created_at->format('Y-m-d')) }}">
                             </div>
                             <div class="col-md-6">
-                                <input type="date"class="form-control" name="Fecha_inicial" id="Fecha_inicial"
-                                    value="{{ old('Fecha_inicial', $team->Fecha_inicial) }}">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="date"class="form-control" name="Fecha_final" id="Fecha_final"
-                                    value="{{ old('Fecha_final', $team->Fecha_final) }}">
-                            </div>
-                            <div class="col-md-6">
-                                <strong>Duración:</strong>
-                            </div>
-                            <div class="col-md-6">
-                                <strong>Ciudad de expedición:</strong>
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" name="Duración" id="Duración"
-                                    value="{{ old('Duración', $team->Duración) }}">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text"class="form-control" name="Ciudad_expedición"
-                                    id="Ciudad_expedición"
-                                    value="{{ old('Ciudad_expedición', $team->Ciudad_expedición) }}">
+                                <input type="date" class="form-control" name="Fecha_final" id="Fecha_final" value="{{ old('Fecha_final', $team->updated_at->format('Y-m-d')) }}">
                             </div>
                         </div>
                     </div>

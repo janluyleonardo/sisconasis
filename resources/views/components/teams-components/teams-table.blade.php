@@ -5,11 +5,11 @@
                 <th scope="col">#</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">Delegado</th>
-                <th scope="col">Telefono</th>
+                 {{--<th scope="col">Telefono</th>
                 <th scope="col">Correo</th>
                 <th scope="col">Barrio</th>
                 <th scope="col">Escudo</th>
-                <th scope="col">Registro</th>
+                <th scope="col">Registro</th> --}}
                 <th scope="col">Acción</th>
             </tr>
         </thead>
@@ -19,11 +19,11 @@
                     <th scope="row">{{$item->id}}</th>
                     <td>{{$item->Team_name}}</td>
                     <td>{{$item->Team_manager}}</td>
-                    <td>{{$item->Team_phone}}</td>
+                    {{--<td>{{$item->Team_phone}}</td>
                     <td>{{$item->Team_email}}</td>
                     <td>{{$item->Team_neighborhood}}</td>
                     <td>{{$item->Team_shield}}</td>
-                    <td>{{$item->created_at}}</td>
+                    <td>{{$item->created_at}}</td> --}}
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <a class="sombra btn btn-sm btn-info" href="#showModal{{ $item->id }}" data-bs-toggle="modal">

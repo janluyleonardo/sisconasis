@@ -23,7 +23,7 @@
                                     <strong><label for="Team_manager" class="form-label">Nombre del delegado:</label></strong>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" name="Team_name" id="Team_name" value="{{old('Team_name')}}">
+                                    <input type="text" class="form-control" name="Team_name" id="Team_name" value="{{ old('Team_name') }}">
                                     @error('Team_name')
                                         <div class="col-md-12 text-center text-danger mb-3"><strong>{{$message}}</strong></div>
                                     @enderror

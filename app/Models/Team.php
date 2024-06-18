@@ -19,4 +19,9 @@ class Team extends Model
         'Team_neighborhood',
         'Team_shield'
     ];
+
+    public function player()
+    {
+        return $this->hasMany(Player::class);
+    }
 }

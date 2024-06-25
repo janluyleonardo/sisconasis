@@ -17,16 +17,22 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <strong>Nombre del delegado:</strong>
+                                <strong>Nombre del equipo:</strong>
                             </div>
                             <div class="col-md-12">
                                 <input type="text" class="form-control" name="Team_name" id="Team_name" value="{{ old('Team_name', $team->Team_name) }}">
                             </div>
                             <div class="col-md-12">
-                                <strong>Correo del delegado:</strong>
+                                <strong>Nombre del delegado:</strong>
                             </div>
                             <div class="col-md-12">
                                 <input type="text" class="form-control" name="Team_manager" id="Team_manager" value="{{ old('Team_manager', $team->Team_manager) }}">
+                            </div>
+                            <div class="col-md-12">
+                                <strong>Correo del delegado:</strong>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" name="Team_email" id="Team_email" value="{{ old('Team_email', $team->Team_email) }}">
                             </div>
                             <div class="col-md-7">
                                 <strong>Localidad del equipo:</strong>
@@ -34,44 +40,19 @@
                             <div class="col-md-5">
                                 <strong>N° contacto:</strong>
                             </div>
-                            {{-- <div class="col-md-7">
-                                @php
-                                    $ccSelect =
-                                        str::lower($team->Tipo_documento) == 'cédula de ciudadanía' ? 'selected' : '';
-                                    $tiSelect =
-                                        str::lower($team->Tipo_documento) == 'tarjeta de identidad' ? 'selected' : '';
-                                    $ceSelect =
-                                        str::lower($team->Tipo_documento) == 'cédula de extrangeria' ? 'selected' : '';
-                                    $deSelect =
-                                        str::lower($team->Tipo_documento) == 'documento de extrangería'
-                                            ? 'selected'
-                                            : '';
-                                    $paSelect = str::lower($team->Tipo_documento) == 'pasaporte' ? 'selected' : '';
-                                    $rcSelect = str::lower($team->Tipo_documento) == 'registro civil' ? 'selected' : '';
-                                @endphp
-                                <select class="form-control select-buscar" id="Tipo_documento" name="Tipo_documento"
-                                    required>
-                                    <option value="" hidden selected>Selecciona tipo de documento</option>
-                                    <option value="cédula de ciudadanía" {{ $ccSelect }}>Cédula de ciudadanía
-                                    </option>
-                                    <option value="tarjeta de identidad" {{ $tiSelect }}>Tarjeta de identidad
-                                    </option>
-                                    <option value="cédula de extrangeria" {{ $ceSelect }}>Cédula de extranjería
-                                    </option>
-                                    <option value="documento de extrangería" {{ $deSelect }}>Documento de identidad
-                                        extranjera</option>
-                                    <option value="pasaporte" {{ $paSelect }}>Pasaporte</option>
-                                    <option value="registro civil" {{ $rcSelect }}>Registro civil</option>
-                                </select>
-                            </div> --}}
                             <div class="col-md-7">
-                                <input type="text" class="form-control" name="Team_neighborhood" id="Team_neighborhood"
-                                    value="{{ old('Team_neighborhood', $team->Team_neighborhood) }}">
+                                <input type="text" class="form-control" name="Team_neighborhood" id="Team_neighborhood" value="{{ old('Team_neighborhood', $team->Team_neighborhood) }}">
                             </div>
                             <div class="col-md-5">
-                                <input type="text" class="form-control" name="Team_phone" id="Team_phone"
-                                    value="{{ old('Team_phone', $team->Team_phone) }}">
+                                <input type="text" class="form-control" name="Team_phone" id="Team_phone" value="{{ old('Team_phone', $team->Team_phone) }}">
                             </div>
+                            {{-- <div class="col-md-12">
+                                <strong>Escudo del equipo:</strong>
+                            </div>
+                            <div class="col-md-12">
+                                <img class="mx-auto" src="{{asset('shields/'.$team->Team_shield)}}" alt="escudo-{{$team->Team_name}}" width="150">
+                                <input class="form-control" type="file" name="Team_shield" id="Team_shield">
+                            </div> --}}
                         </div>
                     </div>
                     <div class="modal-footer">

@@ -29,7 +29,7 @@ class UpdateTeamRequest extends FormRequest
             'Team_email'=>'required|email',
             'Team_phone'=>'required|string|max:255',
             'Team_neighborhood'=>'required|string|max:255',
-            'Team_shield'=>'required|image|mimes:png|max:2048',
+            // 'Team_shield'=>'required|image|mimes:png',
         ];
     }
 }

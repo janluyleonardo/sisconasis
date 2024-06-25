@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePlayerRequest;
 use App\Models\Player;
-use Illuminate\Http\Request;
-
+use App\Http\Requests\StorePlayerRequest;
+use App\Http\Requests\UpdatePlayerRequest;
+use App\Models\Team;
+use Illuminate\Support\Str;
 class PlayerController extends Controller
 {
     /**
@@ -15,7 +16,9 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        return view('players.index');
+        $players = Player::with('team')->orderByDesc('id')->paginate(10);
+        return view('players.index',compact('players'));
+        // return $players->name . $players->team->name;
     }
 
     /**
@@ -25,19 +28,36 @@ class PlayerController extends Controller
      */
     public function create()
     {
-        return view('players.create');
+        $teams = Team::pluck('Team_name', 'id');
+        return view('players.create',compact('teams'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StorePlayerRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(StorePlayerRequest $request)
     {
-        return $request;
-        return "entro en store";
+        // return $request;
+        // return "entro en store";
+        $urlPathPhoto = "IMAGES/players/photos";
+        $newPlayer = $request->all();
+
+        if($imagePhoto = $request->file('Player_photo')){
+            $newPhoto = Str::of($request->Player_name)->slug('-');
+            $imagePhotoPlayer = "Photo-".$newPhoto.".".$imagePhoto->extension();
+            $imagePhoto->move($urlPathPhoto,$imagePhotoPlayer);
+            $newPlayer['Player_photo'] = $imagePhotoPlayer;
+        }
+        // return $newPlayer;
+        try {
+            Player::create($newPlayer);
+            return redirect()->route('players.index')->banner('Jugador creado con éxito');
+        } catch (\Throwable $th) {
+            return redirect()->route('players.index')->dangerBanner('Jugador no fue credo por: '.$th->getMessage());
+        }
     }
 
     /**
@@ -65,13 +85,18 @@ class PlayerController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\UpdatePlayerRequest  $request
      * @param  \App\Models\Player  $player
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Player $player)
+    public function update(UpdatePlayerRequest $request, Player $player)
     {
-        //
+        try {
+            $player->update($request->all());
+            return redirect()->route('players.index')->banner('Jugador actualizado exitosamente.');
+        } catch (\Throwable $th) {
+            return redirect()->route('players.index')->dangerBanner('Jugador no actualizado por: '.$th->getMessage());
+        }
     }
 
     /**
@@ -82,6 +107,11 @@ class PlayerController extends Controller
      */
     public function destroy(Player $player)
     {
-        //
+        try {
+            $player->delete();
+            return redirect()->route('players.index')->banner('Jugador eliminado con éxito');
+        } catch (\Throwable $th) {
+            return redirect()->route('players.index')->dangerBanner('Jugador no fue eliminado por: '.$th->getMessage());
+        }
     }
 }

@@ -16,9 +16,11 @@
                             </i>
                         </a>
                     </div>
-                    <div class="card-body">
-                        {{-- <x-teams-table :teams="$teams"></x-teams-table> --}}
-                    </div>
+                    @if (!$players->isEmpty())
+                        <div class="card-body">
+                            <x-players-table :players="$players"></x-players-table>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

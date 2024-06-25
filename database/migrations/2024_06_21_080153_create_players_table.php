@@ -23,8 +23,8 @@ class CreatePlayersTable extends Migration
             $table->string('Player_age');
             $table->string('Player_number');
             $table->string('Player_position');
-            $table->unsignedBigInteger('teams_id'); // Clave foránea
-            $table->foreign('teams_id')->references('id')->on('teams')->onDelete('cascade');
+            $table->unsignedBigInteger('team_id'); // Clave foránea
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -74,15 +74,36 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="text" name="Player_position" id="Player_position">
+                                    {{-- <input class="form-control" type="text" name="Player_position" id="Player_position"> --}}
+                                    <select class="form-control select-buscar" id="Player_position" name="Player_position" required>
+                                        <option value="" hidden selected>Selecciona posicion del jugador</option>
+                                        <option value="Alero">Alero</option>
+                                        <option value="cierre">Cierre</option>
+                                        <option value="pivot">Pivot</option>
+                                        <option value="arquero">Arquero</option>
+                                    </select>
                                     @error('Player_position')
                                         <div class="col-md-12 text-center text-danger mb-3"><strong>{{$message}}</strong></div>
                                     @enderror
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <strong><label for="Player_photo" class="form-label">Equipo al que pertenece el jugador</label></strong>
+                                </div>
+                                <div class="col-md-6">
                                     <strong><label for="Player_photo" class="form-label">Foto del jugador</label></strong>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <select name="team_id" id="team_id" class="form-control">
+                                        <option value="" hidden selected>Selecciona equipo</option>
+                                        @foreach($teams as $id => $name)
+                                            <option value="{{ $id }}">{{ $name }}</option>
+                                        @endforeach
+                                    </select>
+                                    @error('Player_position')
+                                        <div class="col-md-6 text-center text-danger mb-3"><strong>{{$message}}</strong></div>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6">
                                     <input class="form-control" type="file" name="Player_photo" id="Player_photo">
                                     @error('Player_photo')
                                         <div class="col-md-12 text-center text-danger mb-3"><strong>{{$message}}</strong></div>

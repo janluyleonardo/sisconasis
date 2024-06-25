@@ -1,6 +1,8 @@
 /node_modules
 /public/hot
 /public/storage
+/public/IMAGES/players/photos/*
+/public/shields/*
 /storage/*.key
 /vendor
 .env

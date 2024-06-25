@@ -87,7 +87,7 @@ class TeamController extends Controller
      */
     public function update(UpdateTeamRequest $request, Team $team)
     {
-        return $request;
+        // return $request;
         try {
             $team->update($request->all());
             return redirect()->route('teams.index')->banner('Equipo actualizado exitosamente.');

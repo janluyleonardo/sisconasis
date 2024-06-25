@@ -9,8 +9,6 @@ class Player extends Model
 {
     use HasFactory;
 
-    protected $table = "players";
-
     protected $fillable = [
         'Player_name',
         'Player_document',
@@ -19,7 +17,8 @@ class Player extends Model
         'Player_photo',
         'Player_age',
         'Player_number',
-        'Player_position'
+        'Player_position',
+        'team_id',
     ];
 
     public function team()

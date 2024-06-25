@@ -52,7 +52,7 @@
                             <div class="col-md-3">
                                 {{-- <input type="text" class="form-control" name="Player_email" id="Player_email" value="{{ old('Team_manager', $player->Player_position) }}"> --}}
                                 @php
-                                    $AleroSelect = str::lower($player->Player_position) == 'Alero' ? 'selected' : '';
+                                    $AleroSelect = str::lower($player->Player_position) == 'alero' ? 'selected' : '';
                                     $cierreSelect = str::lower($player->Player_position) == 'cierre' ? 'selected' : '';
                                     $pivotSelect = str::lower($player->Player_position) == 'pivot' ? 'selected' : '';
                                     $arqueroSelect = str::lower($player->Player_position) == 'arquero' ? 'selected' : '';

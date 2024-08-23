@@ -25,4 +25,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     })->name('dashboard');
     Route::resource('/teams', TeamController::class);
     Route::resource('/players', PlayerController::class);
+    Route::get('/prueba', [PlayerController::class,'prueba']);
 });

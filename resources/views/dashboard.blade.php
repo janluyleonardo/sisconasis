@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <div class="bg-gray-900 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
+                <div class="bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6">
                         <div class="flex items-center">
                             <img src=" {{ url('IMAGES/dashboard/tabla-de-crecimiento.png') }}" alt="tabla-de-estadistica" width="75">

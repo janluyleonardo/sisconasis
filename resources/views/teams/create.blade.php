@@ -41,20 +41,20 @@
                                     <strong><label for="Team_phone" class="form-label">N° contacto:</label></strong>
                                 </div>
                                 <div class="col-md-8">
-                                    <input type="text" class="form-control" name="Team_email" id="Team_email" value="{{old('Team_email')}}">
+                                    <input type="email" class="form-control" name="Team_email" id="Team_email" value="{{old('Team_email')}}">
                                     @error('Team_email')
                                         <div class="col-md-12 text-center text-danger mb-3"><strong>{{$message}}</strong></div>
                                     @enderror
                                 </div>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" name="Team_phone" id="Team_phone" value="{{old('Team_phone')}}">
+                                    <input type="number" class="form-control" name="Team_phone" id="Team_phone" value="{{old('Team_phone')}}">
                                     @error('Team_phone')
                                         <div class="col-md-12 text-center text-danger mb-3"><strong>{{$message}}</strong></div>
                                     @enderror
                                 </div>
                                 <div class="col-md-6">
                                     <strong></strong>
-                                    <strong><label for="Team_neighborhood" class="form-label">Localidad del equipo:</label></strong>
+                                    <strong><label for="Team_neighborhood" class="form-label">Barrio del equipo:</label></strong>
                                 </div>
                                 <div class="col-md-6">
                                     <strong><label for="Team_shield" class="form-label">Escudo del equipo</label></strong>

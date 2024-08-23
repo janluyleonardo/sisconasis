@@ -114,4 +114,10 @@ class PlayerController extends Controller
             return redirect()->route('players.index')->dangerBanner('Jugador no fue eliminado por: '.$th->getMessage());
         }
     }
+
+    public function prueba()
+    {
+        return view('prueba');
+
+    }
 }
